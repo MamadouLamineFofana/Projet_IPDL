@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord Admin - Dons de Sang</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/admin">Tableau de bord</a></li>
+        <li><a href="/admin/create-campaign">Créer campagne</a></li>
+        <li><a href="/admin/statistics">Statistiques</a></li>
+        <li><a href="/">Retour au site</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Tableau de bord Administrateur</h1>
+    
+    <div class="admin-panel">
+      <h2>Campagnes en cours</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Campagnes actives</h3>
+          <p class="stat-value">12</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Rendez-vous aujourd'hui</h3>
+          <p class="stat-value">47</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Nouveaux donneurs</h3>
+          <p class="stat-value">23</p>
+        </div>
+      </div>
+
+      <div class="campaign-list">
+        <h3>Dernières campagnes créées</h3>
+        <ul>
+          <li>Collecte Urgence - Hôpital Central (15/06/2023)</li>
+          <li>Don de sang annuel - Croix Rouge (20-22/06/2023)</li>
+          <li>Mobilisation été - Centre Ville (05/07/2023)</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Plateforme de Gestion des Dons de Sang - Administration</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

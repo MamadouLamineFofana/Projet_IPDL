@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campagnes de Don de Sang</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/campaigns" class="active">Campagnes</a></li>
+        <li><a href="/login">Connexion</a></li>
+        <li><a href="/register">Inscription</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Campagnes de Don de Sang</h1>
+    
+    <div class="search-filters">
+      <input type="text" placeholder="Rechercher par lieu, date...">
+      <select>
+        <option>Tous les groupes sanguins</option>
+        <option>A+</option>
+        <option>A-</option>
+        <!-- autres options -->
+      </select>
+    </div>
+    
+    <div class="campaign-card">
+      <h2>Collecte d'urgence - Hôpital Central</h2>
+      <p><strong>Dates:</strong> 15 juin 2023, 8h-18h</p>
+      <p><strong>Lieu:</strong> Hôpital Central, Salle des Conférences</p>
+      <p><strong>Groupes recherchés:</strong> Tous, particulièrement O-</p>
+      <p>Une collecte exceptionnelle pour répondre aux besoins urgents en sang.</p>
+      <a href="/campaigns/1" class="btn">Prendre rendez-vous</a>
+    </div>
+    
+    <!-- Autres campagnes -->
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Plateforme de Gestion des Dons de Sang. Tous droits réservés.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
