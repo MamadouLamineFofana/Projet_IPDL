@@ -1,0 +1,11 @@
+<h2>Campagnes de don de sang</h2>
+<div class="campaigns-list">
+  <% campaigns.forEach(campaign => { %>
+    <div class="campaign-card">
+      <h3><%= campaign.title %></h3>
+      <p><%= campaign.description %></p>
+      <p>Dates : <%= campaign.start_date.toLocaleString() %> - <%= campaign.end_date.toLocaleString() %></p>
+      <a href="/campaigns/<%= campaign.id %>" class="btn">Voir les détails</a>
+    </div>
+  <% }) %>
+</div>

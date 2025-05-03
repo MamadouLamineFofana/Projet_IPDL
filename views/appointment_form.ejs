@@ -1,0 +1,17 @@
+<h2>Prendre rendez-vous pour <%= campaign.title %></h2>
+<form action="/appointments" method="post">
+  <input type="hidden" name="campaign_id" value="<%= campaign.id %>">
+  <div class="form-group">
+    <label>Centre</label>
+    <select name="center_id" required>
+      <% centers.forEach(center => { %>
+        <option value="<%= center.id %>"><%= center.name %> - <%= center.city %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Date et heure</label>
+    <input type="datetime-local" name="date_time" required>
+  </div>
+  <button type="submit" class="btn">Valider</button>
+</form>

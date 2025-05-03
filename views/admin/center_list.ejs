@@ -1,0 +1,28 @@
+<h2>Gestion des centres</h2>
+<a href="/admin/centers/new" class="btn">Ajouter un centre</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Ville</th>
+      <th>Capacité</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% centers.forEach(center => { %>
+      <tr>
+        <td><%= center.name %></td>
+        <td><%= center.city %></td>
+        <td><%= center.capacity %></td>
+        <td>
+          <a href="/admin/centers/edit/<%= center.id %>" class="btn">Modifier</a>
+          <form action="/admin/centers/delete/<%= center.id %>" method="post" style="display:inline;">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

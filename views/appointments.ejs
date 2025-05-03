@@ -1,0 +1,25 @@
+<h2>Mes rendez-vous</h2>
+<table>
+  <tr>
+    <th>Campagne</th>
+    <th>Centre</th>
+    <th>Date et heure</th>
+    <th>Statut</th>
+    <th>Actions</th>
+  </tr>
+  <% appointments.forEach(a => { %>
+    <tr>
+      <td><%= a.campaign_id %></td>
+      <td><%= a.center_id %></td>
+      <td><%= a.date_time.toLocaleString() %></td>
+      <td><%= a.status %></td>
+      <td>
+        <% if (a.status === "scheduled") { %>
+          <form action="/appointments/<%= a.id %>/cancel" method="post" style="display:inline;">
+            <button type="submit" class="btn">Annuler</button>
+          </form>
+        <% } %>
+      </td>
+    </tr>
+  <% }) %>
+</table>

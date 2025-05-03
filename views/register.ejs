@@ -1,0 +1,39 @@
+<section class="form-container">
+  <h2>Inscription</h2>
+  <% if (error) { %>
+    <div class="error-message"><%= error %></div>
+  <% } %>
+  <form action="/auth/register" method="post" novalidate>
+    <div class="form-group">
+      <label for="last_name">Nom</label>
+      <input type="text" id="last_name" name="last_name" required placeholder="Votre nom">
+    </div>
+    <div class="form-group">
+      <label for="first_name">Prénom</label>
+      <input type="text" id="first_name" name="first_name" required placeholder="Votre prénom">
+    </div>
+    <div class="form-group">
+      <label for="email">Adresse email</label>
+      <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required placeholder="••••••••">
+    </div>
+    <div class="form-group">
+      <label for="blood_type">Groupe sanguin</label>
+      <select id="blood_type" name="blood_type" required>
+        <option value="" disabled selected>Choisissez votre groupe sanguin</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+    </div>
+    <button type="submit" class="btn submit-btn">S'inscrire</button>
+  </form>
+</section>

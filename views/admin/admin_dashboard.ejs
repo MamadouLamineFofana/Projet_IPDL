@@ -1,0 +1,29 @@
+<h2>Tableau de bord administrateur</h2>
+
+<div class="stats">
+  <p>Total donneurs : <%= stats.total_donors %></p>
+  <p>Total rendez-vous : <%= stats.total_appointments %></p>
+  <p>Rendez-vous complétés : <%= stats.completed_appointments %></p>
+  <p>Rendez-vous annulés : <%= stats.cancelled_appointments %></p>
+</div>
+
+<a href="/admin/campaign/new" class="btn">Créer une nouvelle campagne</a>
+<a href="/admin/history" class="btn">Voir l'historique des campagnes</a>
+<a href="/admin/statistics" class="btn">Voir les statistiques détaillées</a>
+
+
+<h2>Tableau de bord administrateur</h2>
+<div class="stats">
+  <p>Total donneurs : <%= stats.total_donors %></p>
+  <p>Total rendez-vous : <%= stats.total_appointments %></p>
+  <p>Rendez-vous complétés : <%= stats.completed_appointments %></p>
+  <p>Rendez-vous annulés : <%= stats.cancelled_appointments %></p>
+</div>
+
+<nav class="admin-nav">
+  <a href="/admin/campaigns" class="btn">Gérer les campagnes</a>
+  <a href="/admin/centers" class="btn">Gérer les centres</a>
+  <a href="/admin/appointments" class="btn">Gérer les rendez-vous</a>
+  <a href="/admin/history" class="btn">Historique</a>
+  <a href="/admin/statistics" class="btn">Statistiques</a>
+</nav>

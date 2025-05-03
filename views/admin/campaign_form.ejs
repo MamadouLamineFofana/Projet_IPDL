@@ -1,0 +1,20 @@
+<h2>Créer une nouvelle campagne</h2>
+<form action="/admin/campaign/new" method="post">
+  <div class="form-group">
+    <label>Titre</label>
+    <input type="text" name="title" required>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea name="description" rows="5" required></textarea>
+  </div>
+  <div class="form-group">
+    <label>Date de début</label>
+    <input type="date" name="start_date" required>
+  </div>
+  <div class="form-group">
+    <label>Date de fin</label>
+    <input type="date" name="end_date" required>
+  </div>
+  <button type="submit" class="btn">Créer</button>
+</form>

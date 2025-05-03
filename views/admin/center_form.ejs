@@ -1,0 +1,36 @@
+<h2><%= center ? "Modifier un centre" : "Ajouter un centre" %></h2>
+<form action="<%= center ? '/admin/centers/edit/' + center.id : '/admin/centers/new' %>" method="post">
+  <div class="form-group">
+    <label>Nom</label>
+    <input type="text" name="name" value="<%= center ? center.name : '' %>" required>
+  </div>
+  <div class="form-group">
+    <label>Rue</label>
+    <input type="text" name="street" value="<%= center ? center.street : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Ville</label>
+    <input type="text" name="city" value="<%= center ? center.city : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Code postal</label>
+    <input type="text" name="zip_code" value="<%= center ? center.zip_code : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Pays</label>
+    <input type="text" name="country" value="<%= center ? center.country : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Téléphone</label>
+    <input type="text" name="phone" value="<%= center ? center.phone : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" value="<%= center ? center.email : '' %>">
+  </div>
+  <div class="form-group">
+    <label>Capacité</label>
+    <input type="number" name="capacity" value="<%= center ? center.capacity : '' %>">
+  </div>
+  <button type="submit" class="btn"><%= center ? "Enregistrer" : "Ajouter" %></button>
+</form>

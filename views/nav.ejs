@@ -1,0 +1,20 @@
+<nav>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/campaigns">Campagnes</a></li>
+      <li><a href="/about">À propos</a></li>
+      <li><a href="/admin">Admin</a></li>
+      <% if (!user || !user.userId) { %>
+        <li><a href="/auth/register">Inscription</a></li>
+        <li><a href="/auth/login">Connexion</a></li>
+        <li><a href="/admin">Admin</a></li>
+      <% } else { %>
+        <li><a href="/appointments">Mes rendez-vous</a></li>
+        <% if (user.role === 'admin') { %>
+          <li><a href="/admin">Admin</a></li>
+        <% } %>
+        <li><a href="/auth/logout">Déconnexion</a></li>
+      <% } %>
+    </ul>
+  </nav>
+  

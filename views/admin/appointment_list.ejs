@@ -1,0 +1,39 @@
+<h2>Gestion des rendez-vous</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Donneur (User ID)</th>
+      <th>Campagne</th>
+      <th>Centre</th>
+      <th>Date & Heure</th>
+      <th>Statut</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% appointments.forEach(app => { %>
+      <tr>
+        <td><%= app.id %></td>
+        <td><%= app.user_id %></td>
+        <td><%= app.campaign_title %></td>
+        <td><%= app.center_name %></td>
+        <td><%= new Date(app.date_time).toLocaleString() %></td>
+        <td><%= app.status %></td>
+        <td>
+          <% if (app.status === 'scheduled') { %>
+            <form action="/admin/appointments/<%= app.id %>/confirm" method="post" style="display:inline;">
+              <button type="submit" class="btn btn-success">Confirmer</button>
+            </form>
+            <form action="/admin/appointments/<%= app.id %>/cancel" method="post" style="display:inline;">
+              <button type="submit" class="btn btn-danger">Annuler</button>
+            </form>
+          <% } else { %>
+            <em>Aucune action</em>
+          <% } %>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

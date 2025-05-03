@@ -1,0 +1,49 @@
+<section class="campaign-detail">
+  <div class="campaign-header">
+    <h2><%= campaign.title %></h2>
+    <span class="campaign-status <%= campaign.status %>">
+      <%= campaign.status === 'active' ? 'En cours' : campaign.status === 'upcoming' ? 'À venir' : 'Terminée' %>
+    </span>
+  </div>
+
+  <p class="campaign-description"><%= campaign.description %></p>
+
+  <div class="campaign-infos">
+    <div class="info-block">
+      <strong>Début :</strong>
+      <span>
+        <%= campaign.start_date.toLocaleDateString() %>
+        à
+        <%= campaign.start_date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %>
+      </span>
+    </div>
+    <div class="info-block">
+      <strong>Fin :</strong>
+      <span>
+        <%= campaign.end_date.toLocaleDateString() %>
+        à
+        <%= campaign.end_date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) %>
+      </span>
+    </div>
+    <div class="info-block">
+      <strong>Statut :</strong>
+      <span class="status <%= campaign.status %>">
+        <%= campaign.status === 'active' ? 'En cours' : campaign.status === 'upcoming' ? 'À venir' : 'Terminée' %>
+      </span>
+    </div>
+  </div>
+
+  <div class="campaign-actions">
+    <% if (user && user.userId && user.role === "donor") { %>
+      <a href="/appointments/new/<%= campaign.id %>" class="btn btn-main">Prendre rendez-vous</a>
+    <% } %>
+
+    <% if (user && user.userId) { %>
+      <form action="/campaigns/<%= campaign.id %>/register" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-secondary">Je m'inscris à cette campagne</button>
+      </form>
+    <% } else { %>
+      <a href="/auth/login" class="btn btn-main">Connectez-vous pour vous inscrire</a>
+    <% } %>
+  </div>
+</section>
